@@ -1,0 +1,48 @@
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ header {
+    width: 90vw;
+    height: 10vh;
+    background-color: blue;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 10vh;
+    margin: 0 auto;
+ }
+
+nav {
+    width: 90vw;
+    background-color: grey;
+    margin: 0 auto;
+}
+nav ul li {
+    display: inline-block;
+    color: white;
+    padding:10px;
+}
+nav ul li:nth-of-type(4) {
+    margin-left: auto;
+    color: red;
+}
+
+table {
+    width: 90vw;
+    margin: 10px auto;
+    border-top: 1px solid #aaa;
+    border-collapse: collapse;
+}
+
+table tr.main_list {
+    background-color: #eee;
+}
+th, td {
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+    text-align: center;
+  }
