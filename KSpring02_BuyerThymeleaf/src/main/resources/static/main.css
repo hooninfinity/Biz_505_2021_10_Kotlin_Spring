@@ -1,0 +1,49 @@
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ header {
+    height: 10vh;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 10vh;
+    margin: 0 auto;
+ }
+
+nav {
+    background-color: grey;
+    margin: 0 auto;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    padding:10px;
+}
+nav ul li {
+    padding: 10px;
+}
+nav ul li.login {
+    margin-left: auto;
+}
+
+table {
+    width: 90vw;
+    margin: 10px auto;
+    border-top: 1px solid #aaa;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #eee;
+}
+
+
+th, td {
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+    text-align: center;
+  }
