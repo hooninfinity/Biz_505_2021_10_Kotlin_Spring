@@ -42,10 +42,8 @@ class HomeController {
      */
     @RequestMapping(value = ["/"], method = [RequestMethod.GET])
     fun home(model: Model):String {
-
         println(ConfigData.APP_NAME)
         println(ConfigData.APP_VERSION)
-
 //        val userList = bService.selectAll()
         // model.addAttribute("USERS",userList)
 //        model["USERS"] = userList
