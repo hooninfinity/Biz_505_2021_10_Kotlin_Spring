@@ -1,6 +1,5 @@
 package com.callor.spring.controller
 
-import com.callor.spring.ConfigData
 import com.callor.spring.models.Buyer
 import com.callor.spring.service.BuyerService
 import org.slf4j.LoggerFactory

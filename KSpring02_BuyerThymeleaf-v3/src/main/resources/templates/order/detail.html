@@ -1,0 +1,37 @@
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+
+<section layout:fragment="content" class="order_detail">
+    <script th:inline="javascript">
+        /*
+            javascript 코드에서 thymeleaf template 변수를 사용하기 위해서는
+            html 에서 해당 값을 js 변수로 다시 변환시켜줘야 한다
+            // var rootPath = ${context.request.pageRequest}
+
+            이 변환 작업을 하기 위해서는 script 에
+            th:inline="javascript" 속성을 추가한다
+        */
+        const userid = /*[[ ${ORDERS.userid} ]]*/ null
+
+
+    </script>
+
+    <div>
+        <div>
+            <label>USER</label><span th:text="${ORDERS.userid}">USER</span>
+            <label>상품명</label><span th:text="${ORDERS.pname}">상품명</span>
+            <label>단가</label><span th:text="${ORDERS.qty}">단가</span>
+            <label>수량</label><span th:text="${ORDERS.amt}">수량</span>
+            <label>금액</label><span th:text="${ORDERS.total}">금액</span>
+        </div>
+        <div>
+            <button class="btn_update">고객정보 수정</button>
+            <button class="btn_delete btn_warning">고객정보 삭제</button>
+            <button class="btn_list">리스트로</button>
+        </div>
+    </div>
+
+
+</section>

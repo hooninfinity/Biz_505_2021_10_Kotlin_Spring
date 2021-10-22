@@ -12,13 +12,14 @@ import org.springframework.transaction.annotation.Transactional
 
 // 임의의 테스트용 데이터 100개를 만들어주는 클래스 작성함
 
-// project 가 시작될때 무엇인가 실행해달라 는 의미
+// Spring Boot 가 시작될때 사용할 초기값, 설정 등을 수행하는 클래스
 @SpringBootConfiguration
-class DataInit {
+class BuyerDataInit {
 
     private val logger
-        = LoggerFactory.getLogger(DataInit::class.java)
+        = LoggerFactory.getLogger(BuyerDataInit::class.java)
     
+    // setter 주입방식
     @Autowired
     private lateinit var bDao : BuyerRepository
     
