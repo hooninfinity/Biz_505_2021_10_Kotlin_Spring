@@ -3,6 +3,9 @@ package com.callor.spring.service.impl
 import com.callor.spring.models.Sales
 import com.callor.spring.repository.SalesRepository
 import com.callor.spring.service.OrderService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service("orderServiceV1")
@@ -11,6 +14,17 @@ class OrderServiceImplV1(val salesDao:SalesRepository):OrderService {
     override fun selectAll(): Array<Sales> {
         return salesDao.findAll().toTypedArray()
     }
+
+    override fun selectAll(pageable: Pageable): Page<Sales> {
+        return salesDao.findAll(pageable)
+    }
+
+    override fun selectWithPageable(intPage: Int): Array<Sales> {
+
+        val pageRequest = PageRequest.of(intPage, 10)
+        return salesDao.findWithPagination(pageRequest).toTypedArray()
+    }
+
 
     override fun findById(seq: Long): Sales {
         return salesDao.findById(seq).get()
@@ -39,6 +53,8 @@ class OrderServiceImplV1(val salesDao:SalesRepository):OrderService {
     override fun update(sales: Sales): Sales {
         return salesDao.save(sales)
     }
+
+
 
 
 }

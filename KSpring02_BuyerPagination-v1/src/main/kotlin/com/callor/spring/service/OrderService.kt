@@ -1,10 +1,15 @@
 package com.callor.spring.service
 
 import com.callor.spring.models.Sales
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 
 interface OrderService {
 
     fun selectAll(): Array<Sales>
+
+    fun selectAll(pageable: Pageable): Page<Sales>
+
     fun findById(seq: Long) : Sales
 
     fun findByUserId(userid: String): Array<Sales>
@@ -17,6 +22,7 @@ interface OrderService {
     fun delete(seq: Long)
     fun update(sales: Sales): Sales
 
+    fun selectWithPageable(intPage: Int): Array<Sales>
 
 
 }

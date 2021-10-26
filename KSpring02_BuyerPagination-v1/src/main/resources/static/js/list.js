@@ -40,7 +40,11 @@ $(()=>{
 
     // 동적으로 추가된 table tr 요소에 event 를 설정할때 사용
     $(document).on("click",
-        "table.buyer_list tr",
+        "table.buyer_list tbody tr",
         tableClickHandler)
+
+
+
+
 
 })
