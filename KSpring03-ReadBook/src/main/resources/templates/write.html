@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{layout}"
+>
+<section layout:fragment="content" class="readbook_write">
+    <style>
+        section.readbook_write .main_title {
+            width: 90%;
+            padding: 5px;
+            margin: 0 auto;
+            background-color: #7f8291;
+            text-align: center;
+            justify-items: center;
+        }
+        section.readbook_write .main_input {
+            width: 90%;
+            margin: 0 auto;
+        }
+        section.readbook_write .main_input input {
+            margin: 5px;
+            padding: 10px;
+        }
+        section.readbook_write .main_input .input_01 input{
+            width: 45%;
+        }
+        section.readbook_write .main_input .input_03 input,
+        section.readbook_write .main_input .input_04 textarea {
+            width: 90%;
+        }
+        div.button_list {
+            width: 90%;
+            margin: 5px auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+        div.button_list button {
+            width: 100px;
+            padding: 10px;
+            margin: 5px;
+            border: 0;
+            border-radius: 10px;
+        }
+        div.button_list button:nth-of-type(1) {
+            background-color: blue;
+            color: white;
+        }
+        div.button_list button:nth-of-type(2) {
+            background-color: red;
+            color: white;
+        }
+        div.button_list button:nth-of-type(3) {
+            background-color: orange;
+            color: black;
+        }
+    </style>
+    <div class="main_title">
+        <h1>READ BOOK</h1>
+        <h3>똑 소리나는 독서록 2021 v1</h3>
+    </div>
+    <div class="main_input">
+        <div class="input_01">
+            <input placeholder="9791163032816"/><input placeholder="Do it 자바"/>
+        </div>
+        <div class="input_02">
+            <input placeholder="2021-10-27"/><input placeholder="10:12:22"/><input placeholder="12:32:12"/>
+        </div>
+        <div class="input_03">
+            <input placeholder="생각중독은 깊은 생각에 빠져 주위를 돌아보지 못하는 것이 시작이다"/>
+        </div>
+        <div class="input_04">
+            <textarea placeholder="내용을 입력해주세요"></textarea>
+        </div>
+    </div>
+    <div class="button_list">
+        <button type="button" class="btn_save">저장</button>
+        <button type="button">새로작성</button>
+        <button type="button">리스트보기</button>
+    </div>
+    <script>
+        $(function () {
+
+            $("button.btn_save").on("click", function () {
+                location.href = `${rootPath}read/insert`
+            })
+
+        })
+
+    </script>
+
+
+</section>
+</html>
