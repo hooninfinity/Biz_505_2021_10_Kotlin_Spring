@@ -10,7 +10,7 @@ import javax.persistence.Table
 class Book {
 
     @Id
-    @Column(columnDefinition = "CHAR(255)", nullable = false)
+    @Column(columnDefinition = "CHAR(25)", nullable = false)
     var isbn: String? = null
 
     @Column(columnDefinition = "VARCHAR(25)", nullable = false)

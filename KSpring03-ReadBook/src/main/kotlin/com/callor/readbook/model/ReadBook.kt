@@ -12,7 +12,7 @@ class ReadBook {
     @Column(columnDefinition = "CHAR(4)", nullable = false)
     var seq: String? = null
 
-    @Column(columnDefinition = "CHAR(255)", nullable = false)
+    @Column(columnDefinition = "CHAR(25)", nullable = false)
     var isbn: String? = null
 
 
