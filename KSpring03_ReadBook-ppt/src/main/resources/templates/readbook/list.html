@@ -1,0 +1,26 @@
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section layout:fragment="content" class="content">
+    <table class="read_list">
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>도서명</th>
+                <th>읽은날짜</th>
+                <th>제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="read_tr" th:each="READ : ${READS}">
+                <td th:text="${READ.isbn}">123456</td>
+                <td th:text="${READ.title}">123456</td>
+                <td th:text="${READ.sdate}">123456</td>
+                <td th:text="${READ.title}">123456</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</html>

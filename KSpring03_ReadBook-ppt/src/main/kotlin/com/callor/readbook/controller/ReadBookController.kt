@@ -4,6 +4,8 @@ import com.callor.readbook.config.logger
 import com.callor.readbook.models.ReadBookVO
 import com.callor.readbook.service.ReadBookService
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
+import org.springframework.ui.set
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 
@@ -30,7 +32,14 @@ class ReadBookController(val readBookService: ReadBookService) {
 
         readBookService.readBookInsert(readBook)
         return "redirect:/insert"
+    }
 
+
+    @RequestMapping(value = ["/list"], method = [RequestMethod.GET])
+    fun list(model : Model) : String {
+        val readList = readBookService.selectAll()
+        model["READS"] = readList
+        return "readbook/list"
     }
 
 

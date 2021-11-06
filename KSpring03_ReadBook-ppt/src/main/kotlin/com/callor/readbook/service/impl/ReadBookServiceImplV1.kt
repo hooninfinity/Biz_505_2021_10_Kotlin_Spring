@@ -10,20 +10,28 @@ import org.springframework.stereotype.Service
 
 @Service("readBookServiceV1")
 class ReadBookServiceImplV1(
-        val readBookDao:ReadBookRepository,
-        val bookDao:BookRepository):ReadBookService {
+        val readBookDao: ReadBookRepository,
+        val bookDao: BookRepository) : ReadBookService {
     override fun readBookInsert(readBook: ReadBookVO) {
 
         val readBookDTO = ReadBookDTO(
-            isbn = readBook.isbn,
-            title = readBook.title,
-            content = readBook.content
+                isbn = readBook.isbn,
+                title = readBook.title,
+                subject = readBook.subject,
+                content = readBook.content,
+                sdate = readBook.sdate,
+                stime = readBook.stime,
+                etime = readBook.etime
         )
         val bookDTO = BookDTO(
-            isbn = readBook.isbn,
-            title = readBook.title)
+                isbn = readBook.isbn,
+                title = readBook.title)
 
         readBookDao.save(readBookDTO)
         bookDao.save(bookDTO)
+    }
+
+    override fun selectAll(): Array<ReadBookDTO> {
+        return readBookDao.findAll().toTypedArray()
     }
 }
