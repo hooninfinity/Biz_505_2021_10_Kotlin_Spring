@@ -110,10 +110,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
      * 비밀번호 비교를 하겠다 라는 의미의 메시지
      */
     override fun configure(auth: AuthenticationManagerBuilder) {
-//        auth.inMemoryAuthentication()
-//            .withUser("hoon")
-//            .password("{noop}12341234")
-//            .roles("USER","ADMIN")
+
 
         // security 야 UserDetailService 인터페이스를 상속받은
         // MemberLoginService 클래스의 객체를 너에게 건네주니
