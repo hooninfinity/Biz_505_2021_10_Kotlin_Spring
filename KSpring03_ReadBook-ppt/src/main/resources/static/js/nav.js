@@ -12,6 +12,10 @@ $(function () {
             href += "insert"
         } else if (text === "내 정보") {
             href += "member/mypage"
+        } else if (text === "로그인") {
+            href += "member/login"
+        } else if (text === "로그아웃") {
+            href += "logout"
         }
         location.href = `${href}`
     })
